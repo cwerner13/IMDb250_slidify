@@ -13,6 +13,10 @@ knit        : slidify::knit2slides
 
 ## Slide 2
 
+```{r simple-plot, fig.height = 6, fig.align = 'center', message = F}
+plot(1,2)
+```
+
 --- .class #id 
 
 ## Slide 3

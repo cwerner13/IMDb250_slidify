@@ -13,6 +13,13 @@ knit        : slidify::knit2slides
 
 ## Slide 2
 
+
+```r
+plot(1,2)
+```
+
+<img src="assets/fig/simple-plot.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" />
+
 --- .class #id 
 
 ## Slide 3
