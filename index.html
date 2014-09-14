@@ -51,7 +51,7 @@
 
 <ul>
 <li>Motivation and Data Source</li>
-<li>Data Clean Up and Transformation<br></li>
+<li>R-Code Example </li>
 </ul></li>
 </ul>
 
@@ -59,8 +59,8 @@
 <li><p>Shiny Application</p>
 
 <ul>
+<li>Data Clean Up and Transformation<br></li>
 <li>Gained Insight </li>
-<li>R-Code Example<br></li>
 </ul></li>
 <li><p>Conclusion</p>
 
@@ -79,35 +79,13 @@
     <h2>Data (Slide 3)</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Data Source
-Snapshot of the IMDb Top 250 list as of Dec 31, 2012
-&gt; - Data Clean Up and Transformation</li>
-</ul>
+    <h4>Motivation and Data Source</h4>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+<p>The IMDb Top 250 list [1] celebrates outstanding films, cinema&#39;s development over the past 100 year and its variety. However, the master minds behind these movies are not as manifold as the list&#39;s title suggests.  </p>
 
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h2>Shiny Application (Slide 4)</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Gained Insight 
-
-<ul>
-<li>Contributors (Leaders vs One Hit Wonders)
-<br></li>
-</ul></li>
-</ul>
-
-<ul class = "build incremental">
-<li>R-Code Example</li>
-</ul>
-
-<pre><code class="r">plot(1,2)
+<pre><code class="r">urlfile&lt;-&quot;https://raw.githubusercontent.com/cwerner13/IMDb250_GoogleVis/master/data/Top250%20%28unique%29.csv&quot;
+dsin&lt;- read.csv(urlfile, sep=&quot;,&quot; , header=TRUE, skip=0, stringsAsFactors=FALSE)
+hist(table(dsin$Directors), main=&quot;Number of Top 250 Entries per Director&quot;)
 </code></pre>
 
 <p><img src="assets/fig/simple-plot.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" /></p>
@@ -118,24 +96,43 @@ Snapshot of the IMDb Top 250 list as of Dec 31, 2012
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
+    <h2>Shiny Application (Slide 4)</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Gained Insight</h3>
+
+<p>As few as 22 directors created 40% of the entire list (102 movies). Through the decades these filmmakers not only defined cinema, they defined their era: From Charlie Chaplin in 1921 to Christopher Nolan today.  </p>
+
+<ul>
+<li>The Shiny App [3] explores their contributions quantitatively<br></li>
+<li>Divides contributors into &quot;Leaders&quot; and &quot;One Hit Wonders&quot; over time<br></li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/cwerner13/IMDb250/master/www/clapper2012.png" alt="alt text" title="Logo Title Text 1"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
     <h2>Conclusion (Slide 5)</h2>
   </hgroup>
   <article data-timings="">
-    <p><strong>Next Steps</strong></p>
+    <h3>Next Steps</h3>
 
 <ul>
-<li>Add next year&#39;s data snapshot and compare difference
-Goal to identify movies 
-a) that couldn&#39;t stand the test of time
-b) slowly rise through the ranks</li>
-<li>Make wordcloud dependent on year or di</li>
+<li>Add next year&#39;s data snapshot and compare difference</li>
+<li>Identify movies that couldn&#39;t stand the test of time</li>
+<li>or slowly rise through the ranks with age </li>
 </ul>
 
-<p><strong>References</strong></p>
+<h3>References</h3>
 
 <p>[1] IMDb Top 250, URL: <a href="http://www.imdb.com/chart/top?ref_=nv_ch_250_4">http://www.imdb.com/chart/top?ref_=nv_ch_250_4</a><br>
 [2] Snapshot (IMDb Top 250) as of Dec 31, 2012, URL: <a href="https://github.com/cwerner13/IMDb250_GoogleVis/blob/master/data/Top250%20(unique).csv">https://github.com/cwerner13/IMDb250_GoogleVis/blob/master/data/Top250%20(unique).csv</a><br>
-[3] Shiny App, URL: <a href="https://cwerner13.shinyapps.io/IMDb250_shiny/">https://cwerner13.shinyapps.io/IMDb250_shiny/</a> </p>
+[3] Shiny App, URL: <a href="https://cwerner13.shinyapps.io/IMDb250_shiny/">https://cwerner13.shinyapps.io/IMDb250_shiny/</a><br>
+[4] Github Repository for Shiny App, URL: <a href="https://github.com/cwerner13/IMDb250">https://github.com/cwerner13/IMDb250</a>  </p>
 
   </article>
   <!-- Presenter Notes -->

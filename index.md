@@ -12,62 +12,63 @@ knit        : slidify::knit2slides
 ---
 
 ## Content (Slide 2)
-
 - Data
    - Motivation and Data Source
-   - Data Clean Up and Transformation  
+   - R-Code Example 
+
 
 >- Shiny Application
+   - Data Clean Up and Transformation  
    - Gained Insight 
-   - R-Code Example  
-
+ 
 >- Conclusion
    - Next Steps
    - References  
    
 
+
 --- .class #id 
 
+
 ## Data (Slide 3)
-- Data Source
-Snapshot of the IMDb Top 250 list as of Dec 31, 2012
-> - Data Clean Up and Transformation
+#### Motivation and Data Source   
+The IMDb Top 250 list [1] celebrates outstanding films, cinema's development over the past 100 year and its variety. However, the master minds behind these movies are not as manifold as the list's title suggests.  
+
+```r
+urlfile<-"https://raw.githubusercontent.com/cwerner13/IMDb250_GoogleVis/master/data/Top250%20%28unique%29.csv"
+dsin<- read.csv(urlfile, sep="," , header=TRUE, skip=0, stringsAsFactors=FALSE)
+hist(table(dsin$Directors), main="Number of Top 250 Entries per Director")
+```
+
+<img src="assets/fig/simple-plot.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" />
 
 
 --- .class #id 
 
 ## Shiny Application (Slide 4)
-- Gained Insight 
-    - Contributors (Leaders vs One Hit Wonders)
-<br>
-
-> - R-Code Example
-
-
-```r
-plot(1,2)
-```
-
-<img src="assets/fig/simple-plot.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" />
+### Gained Insight
+  
+  As few as 22 directors created 40% of the entire list (102 movies). Through the decades these filmmakers not only defined cinema, they defined their era: From Charlie Chaplin in 1921 to Christopher Nolan today.  
+  - The Shiny App [3] explores their contributions quantitatively  
+  - Divides contributors into "Leaders" and "One Hit Wonders" over time  
+  
+![alt text](https://raw.githubusercontent.com/cwerner13/IMDb250/master/www/clapper2012.png "Logo Title Text 1")
+  
 
 --- .class #id 
-
+ 
 ## Conclusion (Slide 5)
 
-**Next Steps**
+### Next Steps
   - Add next year's data snapshot and compare difference
-    Goal to identify movies 
-    a) that couldn't stand the test of time
-    b) slowly rise through the ranks
-  - Make wordcloud dependent on year or di
+  - Identify movies that couldn't stand the test of time
+  - or slowly rise through the ranks with age 
         
-        
-        
-**References**
-
+### References
 [1] IMDb Top 250, URL: http://www.imdb.com/chart/top?ref_=nv_ch_250_4  
 [2] Snapshot (IMDb Top 250) as of Dec 31, 2012, URL: https://github.com/cwerner13/IMDb250_GoogleVis/blob/master/data/Top250%20(unique).csv  
-[3] Shiny App, URL: https://cwerner13.shinyapps.io/IMDb250_shiny/ 
+[3] Shiny App, URL: https://cwerner13.shinyapps.io/IMDb250_shiny/  
+[4] Github Repository for Shiny App, URL: https://github.com/cwerner13/IMDb250  
 
 
 

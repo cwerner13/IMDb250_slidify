@@ -1,8 +1,4 @@
 base
-datasets
-graphics
-grDevices
-methods
+googleVis
+shiny
 slidify
-stats
-utils
