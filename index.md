@@ -1,6 +1,6 @@
 ---
 title       : Directors behind the IMDb Top 250
-subtitle    : Shiny Application - Developing Data Products Project
+subtitle    : Developing Data Products Project - Shiny Application
 author      : Claudia Werner
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -11,7 +11,37 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Slide 2
+## Content (Slide 2)
+
+- Data
+   - Motivation and Data Source
+   - Data Clean Up and Transformation  
+
+>- Shiny Application
+   - Gained Insight 
+   - R-Code Example  
+
+>- Conclusion
+   - Next Steps
+   - References  
+   
+
+--- .class #id 
+
+## Data (Slide 3)
+- Data Source
+Snapshot of the IMDb Top 250 list as of Dec 31, 2012
+> - Data Clean Up and Transformation
+
+
+--- .class #id 
+
+## Shiny Application (Slide 4)
+- Gained Insight 
+    - Contributors (Leaders vs One Hit Wonders)
+<br>
+
+> - R-Code Example
 
 
 ```r
@@ -22,16 +52,22 @@ plot(1,2)
 
 --- .class #id 
 
-## Slide 3
+## Conclusion (Slide 5)
 
---- .class #id 
+**Next Steps**
+  - Add next year's data snapshot and compare difference
+    Goal to identify movies 
+    a) that couldn't stand the test of time
+    b) slowly rise through the ranks
+  - Make wordcloud dependent on year or di
+        
+        
+        
+**References**
 
-## Slide 4
-
---- .class #id 
-
-## Slide 5
-
+[1] IMDb Top 250, URL: http://www.imdb.com/chart/top?ref_=nv_ch_250_4  
+[2] Snapshot (IMDb Top 250) as of Dec 31, 2012, URL: https://github.com/cwerner13/IMDb250_GoogleVis/blob/master/data/Top250%20(unique).csv  
+[3] Shiny App, URL: https://cwerner13.shinyapps.io/IMDb250_shiny/ 
 
 
 
