@@ -33,7 +33,7 @@ knit        : slidify::knit2slides
 ## Data (Slide 3)
 #### Motivation and Data Source   
 The IMDb Top 250 list [1] celebrates outstanding films, cinema's development over the past 100 year and its variety. However, the master minds behind these movies are not as manifold as the list's title suggests.  
-```{r simple-plot, fig.height = 4, fig.align = 'center', message = F}
+```{r simple-plot, fig.height = 4, fig.align = 'center', message = F, cache=FALSE}
 urlfile<-"https://raw.githubusercontent.com/cwerner13/IMDb250_GoogleVis/master/data/Top250%20%28unique%29.csv"
 dsin<- read.csv(urlfile, sep="," , header=TRUE, skip=0, stringsAsFactors=FALSE)
 hist(table(dsin$Directors), main="Number of Top 250 Entries per Director")
